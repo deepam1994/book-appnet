@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta cha et="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Add Book</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/book.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item"><a href="/">Book</a></li>
+          <li class="main-header__item">
+            <a class="active" href="/admin/add-book">Add Book</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form class="book-form" action="/admin/add-book" method="POST">
+        <div class="form-control">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
+        </div>
+
+        <button type="submit">Add Book</button>
+      </form>
+    </main>
+  </body>
+</html>

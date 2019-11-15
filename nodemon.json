@@ -1,0 +1,9 @@
+{
+    "env":
+    {
+        "MONGO_USER" : "Deepa",
+        "MONGO_PASSWORD" : "wIgK5gWnzGLFyzuq",
+        "MONGO_DEFAULT_DATABASE" : "booknetwork"
+        
+    }
+}

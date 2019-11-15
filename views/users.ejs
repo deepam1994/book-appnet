@@ -1,0 +1,12 @@
+<%- include('includes/head.ejs') %>
+    <h1>Use </h1>
+    <% if (use .length > 0) { %>
+        <ul>
+            <% use .forEach((user) => { %>
+                <li><%= user.name %></li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <h1>No Use  Found!</h1>
+    <% } %>
+<%- include('includes/end.ejs') %>

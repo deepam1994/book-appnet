@@ -1,0 +1,60 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error"><%= errorMessage %></div>
+        <% } %>
+        <form class="login-form" action="/login" method="POST">
+            <div class="form-control">
+                <label for="email">E-Mail</label>
+                <input 
+                    class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    value="<%= oldInput.email %>">
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input 
+                    class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    value="<%= oldInput.password %>">
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn" type="submit">Login</button>
+            
+            <a href="/reset">Reset Password</a>
+        </form>
+        <!-- <div class="centered">
+            <a href="/reset">Reset Password</a>
+        </div> -->
+        <br>
+        <div class="centered" style="pointer-events: none;opacity: 0.4;">
+            <div >
+                    <span data-clog-trigger="impression" data-clog-metadata="{&quot;action_log_target&quot;: {&quot;type&quot;: 43, &quot;hash&quot;: &quot;googleConnectButton|ZGZUVGUUxAOpNx61I3srBA==_1573734747483145&quot;}}" data-clog-event-type="ActionLogImpression" id="__w2_wTAPFO2a17_actionable" data-clog-processed="1">
+                    <a class="google_button submit_button" href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin" tabindex="5" action_mousedown="SignupGoogleClick" action_stop_propagation="True" id="__w2_wTAPFO2a17_google_connect_button">
+                        <span class="loginBtn loginBtn--google">Continue with Google</span>
+                    </a>
+                </span>
+            </div>
+            <br>
+            <div>
+                    <span data-clog-trigger="impression" data-clog-metadata="{&quot;action_log_target&quot;: {&quot;type&quot;: 43, &quot;hash&quot;: &quot;facebookConnectButton|ZGZUVGUUxAOpNx61I3srBA==_1573734747483145&quot;}}" data-clog-event-type="ActionLogImpression" id="__w2_wTAPFO2a18_actionable" data-clog-processed="1">
+                            <a class="facebook_button submit_button" href="https://en-gb.facebook.com/login/" tabindex="6" action_mousedown="SignupFacebookClick" action_stop_propagation="True" id="__w2_wTAPFO2a18_facebook_connect_button">
+                                <span class="loginBtn loginBtn--facebook">Continue with Facebook</span>
+                            </a>
+                                </span>                
+                </div>
+        </div>
+       
+    </main>
+<%- include('../includes/end.ejs') %>
